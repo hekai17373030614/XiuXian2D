@@ -1,0 +1,117 @@
+.time-controller {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  // 桌面端圆形按钮
+  &__btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    &--active {
+      background-color: #ffffff;
+      border-color: #ffffff;
+      color: #1a1a2e;
+      opacity: 1;
+    }
+
+    &:not(&--active) {
+      opacity: 0.6;
+    }
+  }
+
+  // 移动端样式
+  &--mobile {
+    position: relative;
+    display: inline-block;
+
+    .time-controller__btn {
+      display: none;
+    }
+  }
+
+  // 移动端当前显示按钮
+  &__current {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    border-radius: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__current-text {
+    margin-right: 8px;
+    min-width: 36px;
+    text-align: center;
+  }
+
+  &__arrow {
+    transition: transform 0.2s ease;
+
+    &--up {
+      transform: rotate(180deg);
+    }
+  }
+
+  // 移动端下拉菜单
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background-color: #2a2a3e;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 4px 0;
+    min-width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &__dropdown-item {
+    padding: 8px 16px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: center;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    &--active {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
