@@ -13,7 +13,7 @@ export default function TimeController({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // 固定选项
-  const options = [2, 5, customSpeed];
+  const options = [1, 2, 5, customSpeed];
 
   // 处理点击外部关闭下拉
   useEffect(() => {

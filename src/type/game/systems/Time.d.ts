@@ -1,6 +1,8 @@
 export interface Time {
-  currentTime: Date;
   timeScale: number;
+  getTime(temp?: string): Date | string;
+  setTimeScale?: (scale: number) => void;
+  advanceTime?: (realSeconds: number) => void;
 }
 
 export interface TimeConfig {
