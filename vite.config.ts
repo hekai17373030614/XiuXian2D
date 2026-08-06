@@ -12,7 +12,7 @@ export default defineConfig({
     customPxToVw({
       targets: [
         {
-          fileMatch: /src\/pages\/.*\.mobile.scss/,
+          fileMatch: /src\/pages\/.*\.mobile.*\.scss/,
           viewportWidth: 375,
           wrapMediaQuery: 'max-width: 992px',
         },

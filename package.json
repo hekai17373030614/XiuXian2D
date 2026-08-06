@@ -13,10 +13,12 @@
     "@nillos/vite-plugin-nillos-px2vw": "^1.0.3",
     "@react-router/dev": "^8.3.0",
     "babylonjs": "^9.19.0",
+    "dayjs": "^1.11.21",
+    "es-toolkit": "^1.50.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router": "^8.2.0",
-    "sass": "^1.101.7"
+    "sass": "^1.102.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

@@ -1,0 +1,33 @@
+@use '@/styles/utils.scss' as utils;
+
+.system-controller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  &:global(.no-event),
+  :global(.no-event) {
+    pointer-events: none;
+  }
+
+  .top-controller {
+    top: 0;
+    left: 0;
+  }
+  .bottom-controller {
+    bottom: 0;
+    left: 0;
+  }
+  .top-controller,
+  .bottom-controller {
+    position: fixed;
+    width: 100vw;
+    @include utils.flex(
+      (
+        justify-content: space-between,
+      )
+    );
+  }
+}

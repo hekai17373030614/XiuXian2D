@@ -1,0 +1,8 @@
+@use 'sass:map';
+
+@mixin flex($config: ()) {
+  display: flex;
+  flex-direction: map.get($config, 'direction');
+  justify-content: map.get($config, 'justify-content');
+  align-items: map.get($config, 'align-items');
+}
