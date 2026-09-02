@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import babel from '@rolldown/plugin-babel';
+import svgr from 'vite-plugin-svgr';
 import path from 'path';
 import customPxToVw from '@nillos/vite-plugin-nillos-px2vw';
 
@@ -9,6 +10,8 @@ export default defineConfig({
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
+    // 关闭 svgo，保留手写 SVG 的 id/filter/mask/use 引用关系不被改写
+    svgr({ svgrOptions: { svgo: false } }),
     customPxToVw({
       targets: [
         {

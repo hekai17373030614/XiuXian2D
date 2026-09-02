@@ -1,0 +1,16 @@
+{
+  "id": "5229138",
+  "name": "XiuXian2D",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "301424",
+      "name": "详情",
+      "font_class": "xiangqing",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    }
+  ]
+}

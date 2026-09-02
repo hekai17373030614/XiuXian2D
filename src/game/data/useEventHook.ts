@@ -187,8 +187,7 @@ class EventBus {
   has<T>(key: string, callback?: EventCallback<T>): boolean {
     const callbacks = this.eventMap.get(key);
     return (
-      !!callbacks &&
-      (callback ? callbacks.has(callback as EventCallback) : callbacks.size > 0)
+      !!callbacks && (callback ? callbacks.has(callback as EventCallback) : callbacks.size > 0)
     );
   }
 

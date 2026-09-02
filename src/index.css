@@ -49,19 +49,15 @@
     filter: invert(1) brightness(2);
   }
 }
-
-#root {
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1,

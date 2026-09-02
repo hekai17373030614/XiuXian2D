@@ -1,3 +1,3 @@
 export interface IGameSystem {
-  getConfig(key?:string): GameConfig | null;
+  getConfig(key?: string): GameConfig | null;
 }

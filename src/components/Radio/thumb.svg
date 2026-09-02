@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <!-- 圆角三角形路径：A(2,4) B(22,4) C(12,20)，r=2 -->
+    <path id="radio-thumb-triangle" d="M 4 4 L 20 4 A 2 2 0 0 1 20.94 5.7 L 13.06 18.3 A 2 2 0 0 1 10.94 18.3 L 3.06 5.7 A 2 2 0 0 1 4 4 Z"/>
+
+    <!-- 高光遮罩：左下透明(黑) → 右上不透明(白) -->
+    <linearGradient id="radio-thumb-highlight-mask-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <mask id="radio-thumb-highlight-mask" maskUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="url(#radio-thumb-highlight-mask-grad)"/>
+    </mask>
+
+    <!-- 边框加深遮罩：左下不透明(白) → 右上透明(黑) -->
+    <linearGradient id="radio-thumb-darken-mask-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <mask id="radio-thumb-darken-mask" maskUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="url(#radio-thumb-darken-mask-grad)"/>
+    </mask>
+
+    <!-- 高光滤镜：每个 RGB 通道 +0.4（加亮 40%）-->
+    <filter id="radio-thumb-lighten40">
+      <feColorMatrix type="matrix" values="1 0 0 0 0.4  0 1 0 0 0.4  0 0 1 0 0.4  0 0 0 1 0"/>
+    </filter>
+
+    <!-- 加深滤镜：每个 RGB 通道 ×0.7（混合 30% 黑色）-->
+    <filter id="radio-thumb-darken30">
+      <feColorMatrix type="matrix" values="0.7 0 0 0 0  0 0.7 0 0 0  0 0 0.7 0 0  0 0 0 1 0"/>
+    </filter>
+  </defs>
+
+  <!-- 填充底色：currentColor -->
+  <use href="#radio-thumb-triangle" fill="currentColor"/>
+  <!-- 填充高光：加亮 currentColor，左下透明 → 右上不透明 -->
+  <use href="#radio-thumb-triangle" fill="currentColor" filter="url(#radio-thumb-lighten40)" mask="url(#radio-thumb-highlight-mask)"/>
+  <!-- 边框底色：currentColor -->
+  <use href="#radio-thumb-triangle" fill="none" stroke="currentColor" stroke-width="1"/>
+  <!-- 边框加深：变暗 currentColor，左下不透明 → 右上透明 -->
+  <use href="#radio-thumb-triangle" fill="none" stroke="currentColor" stroke-width="1" filter="url(#radio-thumb-darken30)" mask="url(#radio-thumb-darken-mask)"/>
+</svg>

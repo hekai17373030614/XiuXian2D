@@ -1,0 +1,28 @@
+@use '@/styles/utils.scss' as utils;
+.setting-form-item {
+  &_inline {
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+  }
+}
+
+.setting-form-title {
+  gap: 10px;
+  @include utils.flex(
+    (
+      align-items: center,
+    )
+  );
+}
+.setting-form-input-content {
+  flex: 1;
+  @include utils.flex(
+    (
+      justify-content: right,
+    )
+  );
+  .setting-input-item {
+    width: 130px;
+  }
+}
